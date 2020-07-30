@@ -6,12 +6,12 @@ public interface SortAble<T> {
 
     T[] sort(T[] array);
 
-    default void display(T[] array){
+    default void display(T[] array) {
         StringBuilder builder = new StringBuilder();
         builder.append("[");
         for (int i = 0; i < array.length; i++) {
             builder.append(array[i]);
-            if (i != array.length - 1){
+            if (i != array.length - 1) {
                 builder.append(",");
             }
         }
@@ -20,8 +20,8 @@ public interface SortAble<T> {
         System.out.println(arrayStr);
     }
 
-    default T[] swap(T[] arr,int i, int j){
-        count.SWAP_NUM ++ ;
+    default T[] swap(T[] arr, int i, int j) {
+        count.SWAP_NUM++;
         T temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
