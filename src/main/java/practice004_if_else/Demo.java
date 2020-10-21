@@ -4,10 +4,9 @@ public class Demo {
 
     public static void main(String[] args) {
         boolean b = true;
-        if (b){
+        if (b) {
             b = false;
-        }
-        else {
+        } else {
             b = true;
         }
     }

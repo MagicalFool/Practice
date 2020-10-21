@@ -1,29 +1,37 @@
 package practice024_reflect;
 
+import java.lang.annotation.Annotation;
+import java.lang.reflect.AnnotatedType;
+import java.lang.reflect.Type;
+
 /**
- * Class对象  三种获取方式 obj.getClass(), Class.forName(), Object.class
+ * Class 类的方法
  */
+@Test
 public class Demo02 {
 
     public static void main(String[] args) {
-        Demo02 obj = new Demo02();
-        Class<?> aClass = obj.getClass();
-        System.out.println("obj.getClass()->" + aClass);
-        Class<Demo02> objectClass = Demo02.class;
-        System.out.println("Object.class->" + objectClass);
-        try {
-            Class<?> aClass1 = Class.forName("practice024_reflect.Demo02");
+        Demo02 demo02 = new Demo02();
+        Class<? extends Demo02> aClass = demo02.getClass();
+        //1.getAnnotatedInterfaces
+        AnnotatedType[] annotatedInterfaces = aClass.getAnnotatedInterfaces();
+//        String typeName = annotatedInterfaces[0].getType().getTypeName();
+        System.out.println(annotatedInterfaces.length);
 
-            System.out.println("Class.forName->" + aClass1);
+        //2.getAnnotatedSuperclass
+        AnnotatedType annotatedSuperclass = aClass.getAnnotatedSuperclass();
 
-            System.out.println(aClass == objectClass);
-            System.out.println(aClass == aClass1);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+        //3.getAnnotations()
+        Annotation[] annotations = aClass.getAnnotations();
+        System.out.println(annotations.length);
+        //4.
+        String canonicalName = aClass.getCanonicalName();
+        System.out.println(canonicalName);
 
+        //5.
+        boolean b = aClass.desiredAssertionStatus();
+        System.out.println(b);
 
-
-
+        //6.
     }
 }

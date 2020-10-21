@@ -7,11 +7,11 @@ public class SelectSort implements SortAble<Integer> {
         for (int i = 0; i < arr.length; i++) {
             min = i;
             for (int j = i; j < arr.length; j++) {
-                if (arr[min] > arr[j]){
+                if (arr[min] > arr[j]) {
                     min = j;
                 }
             }
-            swap(arr,min,i);
+            swap(arr, min, i);
         }
         return arr;
     }

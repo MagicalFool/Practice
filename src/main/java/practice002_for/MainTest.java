@@ -2,13 +2,14 @@ package practice002_for;
 
 public class MainTest {
     public static void main(String[] args) {
-        for (int i = 0; test(i);){
+        for (int i = 0; test(i); ) {
 
         }
     }
-    public static boolean test(int i){
+
+    public static boolean test(int i) {
         System.out.println("hello");
-        i ++ ;
+        i++;
         return i < 10;
     }
 }

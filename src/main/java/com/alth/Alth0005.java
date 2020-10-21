@@ -12,18 +12,17 @@ public class Alth0005 {
     }
 
 
-
     public String longestPalindrome(String s) {
         char[] chars = s.toCharArray();
         int length = chars.length;
         String str = "";
         for (int j = 0; j < length; j++) {
             for (int i = j; i < length; i++) {
-                if (j > length -i){
+                if (j > length - i) {
                     break;
                 }
-                String temp = s.substring(j,length-i);
-                if (chars[i] == chars[length - i -1] && str.length() <= temp.length()){
+                String temp = s.substring(j, length - i);
+                if (chars[i] == chars[length - i - 1] && str.length() <= temp.length()) {
                     str = temp;
                 }
 

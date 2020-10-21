@@ -2,6 +2,7 @@ package com.datastruct;
 
 /**
  * Stack Abstract Data Interface
+ *
  * @author chenchao
  */
 public interface StackInterface<T> {

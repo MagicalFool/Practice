@@ -8,8 +8,8 @@ public class T006_CompressOM {
 //        System.out.printf(ClassLayout.parseInstance(T006_CompressOM.class).toPrintable());
     }
 
-    public void test(int i){
-        i ++ ;
+    public void test(int i) {
+        i++;
         System.out.println(i);
         test(i);
 

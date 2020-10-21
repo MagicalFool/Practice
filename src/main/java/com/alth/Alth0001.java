@@ -6,9 +6,9 @@ package com.alth;
 public class Alth0001 {
 
     public static void main(String[] args) {
-        int[] arr = {-1,-2,-3,-4,-5};
+        int[] arr = {-1, -2, -3, -4, -5};
         int target = -8;
-        int[] arr1 = new Solution().twoSum(arr,target);
+        int[] arr1 = new Solution().twoSum(arr, target);
         System.out.println(arr1[0] + "," + arr1[1]);
     }
 }
@@ -16,18 +16,18 @@ public class Alth0001 {
 class Solution {
     public int[] twoSum(int[] nums, int target) {
 
-        int[] res  = new int[2];
+        int[] res = new int[2];
 
         int length = nums.length;
 
         // 思路 先找数组第一个如果大了就下一个，如果小用target-x= x2 x2去数组里寻找有哦没有
-        for(int i = 0 ; i< length; i++ ){
+        for (int i = 0; i < length; i++) {
 //            if(nums[i] > target)
 //                continue;
             res[0] = i;
-            for(int j = i + 1; j<length; j++){
+            for (int j = i + 1; j < length; j++) {
                 int tmp = nums[i];
-                if((target - tmp) == nums[j]){
+                if ((target - tmp) == nums[j]) {
                     res[1] = j;
                     return res;
                 }

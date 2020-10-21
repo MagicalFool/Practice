@@ -16,9 +16,9 @@ public class Demo {
 //        table.put("1","3");
 //        Collections.synchronizedMap(map);
 //        System.out.println(put);
-        new ThreadDemo(map,0,30).start();
-        new ThreadDemo(map,30,60).start();
-        new ThreadDemo(map,60,90).start();
+        new ThreadDemo(map, 0, 30).start();
+        new ThreadDemo(map, 30, 60).start();
+        new ThreadDemo(map, 60, 90).start();
 
         System.out.println(map);
         System.out.println(map.size());

@@ -5,10 +5,10 @@ import java.util.Iterator;
 
 /**
  * What's is ADT? 抽象数据模型
+ *
  * @author chenchao
  */
 public class L1_ADT {
-
 
 
     public static void main(String[] args) {

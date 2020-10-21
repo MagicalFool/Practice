@@ -4,7 +4,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 // res
-class User{
+class User {
     private String name;
 
     private String sex;
@@ -28,29 +28,31 @@ class User{
     }
 }
 
-class Producer extends Thread{
+class Producer extends Thread {
     Lock lock = new ReentrantLock();
     User user;
-    Producer(User user){
+
+    Producer(User user) {
         this.user = user;
     }
+
     @Override
     public void run() {
         int num = 0;
-        while (true){
+        while (true) {
 
-            synchronized (user){
-                if (user.flag){
+            synchronized (user) {
+                if (user.flag) {
                     try {
                         user.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
-                if (num == 0){
+                if (num == 0) {
                     user.setName("小刘");
                     user.setSex("男");
-                }else {
+                } else {
                     user.setName("小红");
                     user.setSex("女");
                 }
@@ -69,30 +71,30 @@ class Producer extends Thread{
     }
 }
 
-class Consumer extends Thread{
+class Consumer extends Thread {
     User user;
-    Consumer(User user){
+
+    Consumer(User user) {
         this.user = user;
     }
-    @Override
-    public void run(){
-        while (true){
 
-            synchronized (user){
-                if (!user.flag){
+    @Override
+    public void run() {
+        while (true) {
+
+            synchronized (user) {
+                if (!user.flag) {
                     try {
                         user.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
-                System.out.println("name ="+user.getName()+","+ user.getSex());
+                System.out.println("name =" + user.getName() + "," + user.getSex());
                 user.flag = false;
                 user.notify();
 
             }
-
-
 
 
 //            try {
@@ -103,6 +105,7 @@ class Consumer extends Thread{
         }
     }
 }
+
 public class Demo {
     public static void main(String[] args) {
         User user = new User();

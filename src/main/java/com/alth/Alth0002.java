@@ -2,7 +2,7 @@ package com.alth;
 
 /**
  * 给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。
- *
+ * <p>
  * 如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。
  */
 public class Alth0002 {
@@ -17,7 +17,7 @@ public class Alth0002 {
 //        node2.next.next = new ListNode(9);
         ListNode listNode = new Alth0002().method2(node1, node2);
 
-        while (listNode != null){
+        while (listNode != null) {
             System.out.println(listNode.val);
             listNode = listNode.next;
         }
@@ -53,8 +53,8 @@ public class Alth0002 {
 
     }
 
-    ListNode method2(ListNode l1, ListNode l2){
-                // 从两个链表第一个节点开始扫描，获取到val之后相加
+    ListNode method2(ListNode l1, ListNode l2) {
+        // 从两个链表第一个节点开始扫描，获取到val之后相加
         ListNode newNode = new ListNode(0); // 新的链表
 
         ListNode cur = newNode;
@@ -85,7 +85,7 @@ public class Alth0002 {
 
         }
 
-        if (carry == 1){
+        if (carry == 1) {
             cur.next = new ListNode(1);
         }
 

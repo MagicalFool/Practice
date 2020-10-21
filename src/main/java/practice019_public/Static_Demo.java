@@ -2,6 +2,7 @@ package practice019_public;
 
 public class Static_Demo {
     static Result res = Result.result;
+
     public static void main(String[] args) {
 
 
@@ -11,7 +12,7 @@ public class Static_Demo {
             @Override
             public void run() {
                 for (int i = 0; i < 1000; i++) {
-                    res.setI(i+1000);
+                    res.setI(i + 1000);
                     System.out.println(Thread.currentThread().getName() + "----" + res.getI());
                 }
             }

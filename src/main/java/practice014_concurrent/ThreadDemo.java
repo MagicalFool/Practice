@@ -11,7 +11,7 @@ public class ThreadDemo extends Thread {
 
     private int end;
 
-    public ThreadDemo(Map map,int start, int end) {
+    public ThreadDemo(Map map, int start, int end) {
         this.map = map;
         this.start = start;
         this.end = end;
@@ -19,8 +19,8 @@ public class ThreadDemo extends Thread {
 
     @Override
     public void run() {
-        for (int i = start; i < end ; i++) {
-            map.put(i,i+"_");
+        for (int i = start; i < end; i++) {
+            map.put(i, i + "_");
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {

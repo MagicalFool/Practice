@@ -14,8 +14,8 @@ public class L2_Stack {
 
         System.out.println(stack.peek());
 
-        while (!stack.isEmpty()){
-            System.out.println( stack.pop());
+        while (!stack.isEmpty()) {
+            System.out.println(stack.pop());
         }
 
     }

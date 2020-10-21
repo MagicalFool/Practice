@@ -6,6 +6,7 @@ import java.util.Vector;
 
 /**
  * 链表实现的栈
+ *
  * @author chenchao
  */
 public class L3_LinkedStack<T> implements StackInterface<T> {
@@ -13,15 +14,15 @@ public class L3_LinkedStack<T> implements StackInterface<T> {
     // References the first node in the chain
     private Node topNode;
 
-    public L3_LinkedStack(){
+    public L3_LinkedStack() {
         topNode = null;
     }
 
-    private class Node{
-        private T    data;  // Entry in stack
+    private class Node {
+        private T data;  // Entry in stack
         private Node next;  // Link to next node
 
-        Node(T data, Node fNode){
+        Node(T data, Node fNode) {
             this.data = data;
             this.next = fNode;
         }
@@ -46,13 +47,13 @@ public class L3_LinkedStack<T> implements StackInterface<T> {
 
     @Override
     public void push(T t) {
-        Node node = new Node(t,topNode);
+        Node node = new Node(t, topNode);
         topNode = node;
     }
 
     @Override
     public T pop() {
-        T top  = peek();
+        T top = peek();
         assert topNode != null;
         topNode = topNode.getNext();
         return top;
@@ -60,9 +61,9 @@ public class L3_LinkedStack<T> implements StackInterface<T> {
 
     @Override
     public T peek() {
-        if (isEmpty()){
+        if (isEmpty()) {
             throw new RuntimeException("Stack is null.");
-        }else {
+        } else {
             return topNode.getData();
         }
     }

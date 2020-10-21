@@ -1,7 +1,7 @@
 package com.alth.leetcode;
 
 /**
- *  请你来实现一个 atoi 函数，使其能将字符串转换成整数。
+ * 请你来实现一个 atoi 函数，使其能将字符串转换成整数。
  */
 public class AL0008 {
 
@@ -12,10 +12,10 @@ public class AL0008 {
     public int myAtoi(String str) {
         char[] chars = str.toCharArray();
 
-        for (int i = 0; i < chars.length ; i++) {
-            if (chars[i] == ' '){
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i] == ' ') {
                 continue;
-            }else if ('0'<= chars[i] && chars[i] <= '9'){
+            } else if ('0' <= chars[i] && chars[i] <= '9') {
 
             }
         }
@@ -26,8 +26,6 @@ public class AL0008 {
 
         //
         return 0;
-
-
 
 
     }

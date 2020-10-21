@@ -1,6 +1,6 @@
 package com.sort;
 
-public class InsertSort implements SortAble<Integer>{
+public class InsertSort implements SortAble<Integer> {
     @Override
     public Integer[] sort(Integer[] arr) {
         int in, out;

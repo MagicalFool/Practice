@@ -11,7 +11,8 @@ public class AnnotationDemo {
     @hello(name = "abc")
     private String hello;
 
-    public void add(){}
+    public void add() {
+    }
 
     @Override
     public String toString() {
@@ -35,9 +36,9 @@ public class AnnotationDemo {
     }
 }
 
-@Target({ElementType.METHOD,ElementType.FIELD})
+@Target({ElementType.METHOD, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-@interface hello{
+@interface hello {
 
     String name();
 }

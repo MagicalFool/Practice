@@ -2,6 +2,7 @@ package com.datastruct.stack;
 
 /**
  * 测试栈 翻转数字
+ *
  * @author chenchao
  */
 public class TestStack {
@@ -11,7 +12,7 @@ public class TestStack {
         System.out.println("翻转前:" + str);
         char[] chars = str.toCharArray();
         ArrayStack stack = new ArrayStack(chars.length);
-        for (char c: chars){
+        for (char c : chars) {
             stack.push(Long.valueOf(String.valueOf(c)));
         }
         StringBuilder builder = new StringBuilder();

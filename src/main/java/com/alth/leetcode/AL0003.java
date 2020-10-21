@@ -36,7 +36,7 @@ public class AL0003 {
         return 1;
     }
 
-    class CharObject{
+    class CharObject {
         int position;
         char value;
         int start;

@@ -2,21 +2,22 @@ package com.datastruct.link;
 
 /**
  * 链表
+ *
  * @author chenchao
  */
 public class LinkedList {
     // 链表节点
-    public class Link{
+    public class Link {
         public int iData;
         public double dData;
         public Link next;
 
-        public Link(int i ,double d) {
+        public Link(int i, double d) {
             iData = i;
             dData = d;
         }
 
-        public void displayLinked(){
+        public void displayLinked() {
             System.out.println("{" + iData + "," + dData + "}");
         }
 
@@ -28,58 +29,58 @@ public class LinkedList {
         this.first = null;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return (first == null);
     }
 
-    public void insertFirst(int id,double dd){
-        Link newLink = new Link(id,dd);
+    public void insertFirst(int id, double dd) {
+        Link newLink = new Link(id, dd);
         newLink.next = first;
         first = newLink;
     }
 
-    public Link deleteFirst(){
+    public Link deleteFirst() {
         Link temp = first;
         first = first.next;
         return temp;
     }
 
-    public void display(){
+    public void display() {
         System.out.println("List (first -> last):");
         Link current = first;
-        while (current != null){
+        while (current != null) {
             current.displayLinked();
             current = current.next;
         }
         System.out.println("");
     }
 
-    public Link find(int key){
+    public Link find(int key) {
         Link current = first;
-        while (current.iData != key){
-            if (current.next == null){
+        while (current.iData != key) {
+            if (current.next == null) {
                 return null;
-            }else {
+            } else {
                 current = current.next;
             }
         }
         return current;
     }
 
-    public Link delete(int key){
+    public Link delete(int key) {
         Link current = first;
         Link previous = first;
-        while (current.iData == key){
-            if (current.next == null){
+        while (current.iData == key) {
+            if (current.next == null) {
                 return null;
-            }else {
+            } else {
                 previous = current;
                 current = current.next;
             }
         }
-        if (current == first){
+        if (current == first) {
             first = first.next;
-        }else {
+        } else {
             previous.next = current.next;
         }
         return current;

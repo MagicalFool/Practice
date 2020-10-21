@@ -6,7 +6,7 @@ public class Demo {
          * while is limit to
          */
         int i = 0;
-        while (true){
+        while (true) {
             System.out.println(i++);
             try {
                 Thread.sleep(1000);

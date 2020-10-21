@@ -2,6 +2,7 @@ package com.datastruct.queue;
 
 /**
  * 数组实现队列
+ *
  * @author chenchao
  */
 public class ArrayQueue {
@@ -11,42 +12,44 @@ public class ArrayQueue {
     private int rear;
     private int nItems;
 
-    public ArrayQueue(int maxSize){
+    public ArrayQueue(int maxSize) {
         this.maxSize = maxSize;
-        queArray = new  long[maxSize];
+        queArray = new long[maxSize];
         front = 0;
         rear = -1;
         nItems = 0;
     }
-    public void insert(long j){
-        if (rear == maxSize -1){
+
+    public void insert(long j) {
+        if (rear == maxSize - 1) {
             rear = -1;
             queArray[++rear] = j;
-            nItems ++;
+            nItems++;
         }
     }
-    public long remove(){
-        long temp = queArray[front ++ ];
-        if (front == maxSize){
+
+    public long remove() {
+        long temp = queArray[front++];
+        if (front == maxSize) {
             front = 0;
         }
-        nItems --;
+        nItems--;
         return temp;
     }
 
-    public long peekFront(){
+    public long peekFront() {
         return queArray[front];
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return nItems == 0;
     }
 
-    public boolean isFull(){
+    public boolean isFull() {
         return nItems == maxSize;
     }
 
-    public int size(){
+    public int size() {
         return nItems;
     }
 }

@@ -15,7 +15,7 @@ public class ShallowClone {
         a1.setStr(str);
         a1.setB(b);
 
-        A clone = (A)a1.clone();
+        A clone = (A) a1.clone();
 
         clone.setStr(new String("bbbb"));
         B b1 = new B();
@@ -31,9 +31,9 @@ public class ShallowClone {
 }
 
 
-class A implements  Cloneable{
+class A implements Cloneable {
 
-    private int i ;
+    private int i;
 
     private String str;
 
@@ -70,10 +70,10 @@ class A implements  Cloneable{
     }
 }
 
-class B{
- private int i;
+class B {
+    private int i;
 
- private String s;
+    private String s;
 
     public int getI() {
         return i;

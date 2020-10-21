@@ -7,15 +7,16 @@ public class T001_JavaVMStackOOM {
     }
 
     private Integer count = 1;
-    private void dontStop(){
-        count ++;
+
+    private void dontStop() {
+        count++;
         dontStop();
     }
 
-    public void stackLeakByThread(){
-        try{
+    public void stackLeakByThread() {
+        try {
             dontStop();
-        }catch (Throwable e){
+        } catch (Throwable e) {
             System.out.println("count --> " + count);
 //            e.printStackTrace();
         }

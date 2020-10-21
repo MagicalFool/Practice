@@ -7,31 +7,31 @@ public class Tree {
 
     public TreeNode root;
 
-    Tree(){
+    Tree() {
         root = null;
     }
+
     // insert elem
-    public void insert(int id, double dd){
+    public void insert(int id, double dd) {
         TreeNode newNode = new TreeNode();
         newNode.iData = id;
         newNode.fData = dd;
-        if (root == null){
+        if (root == null) {
             root = newNode;
-        }else {
+        } else {
             TreeNode current = root;
             TreeNode parent;
-            while (true){
+            while (true) {
                 parent = current;
-                if (id < current.iData){
+                if (id < current.iData) {
                     current = current.leftChild;
-                    if (current == null){
+                    if (current == null) {
                         parent.leftChild = newNode;
                         return;
                     }
-                }
-                else {
+                } else {
                     current = current.rightChild;
-                    if (current == null){
+                    if (current == null) {
                         parent.rightChild = newNode;
                         return;
                     }
@@ -43,16 +43,16 @@ public class Tree {
 
     }
 
-    public void preOrder(TreeNode root){
-        if (root != null){
+    public void preOrder(TreeNode root) {
+        if (root != null) {
             System.out.print(root.iData + " ");
             preOrder(root.leftChild);
             preOrder(root.rightChild);
         }
     }
 
-    public void inOrder(TreeNode root){
-        if (root != null){
+    public void inOrder(TreeNode root) {
+        if (root != null) {
 
             inOrder(root.leftChild);
             System.out.print(root.iData + " ");
@@ -60,8 +60,8 @@ public class Tree {
         }
     }
 
-    public void postOrder(TreeNode root){
-        if (root != null){
+    public void postOrder(TreeNode root) {
+        if (root != null) {
 
             postOrder(root.leftChild);
             postOrder(root.rightChild);

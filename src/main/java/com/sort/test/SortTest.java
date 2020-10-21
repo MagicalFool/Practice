@@ -6,7 +6,7 @@ import com.sort.SelectSort;
 public class SortTest {
 
     public static void main(String[] args) {
-        Integer[] arr = {3,1,2,1,2};
+        Integer[] arr = {3, 1, 2, 1, 2};
         BubbleSort bubbleSort = new BubbleSort();
         bubbleSort.sort(arr);
         bubbleSort.display(arr);

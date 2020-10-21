@@ -6,11 +6,11 @@ import java.lang.reflect.Proxy;
 
 public class DProxy {
 
-    interface IHello{
+    interface IHello {
         void sayHello();
     }
 
-    static class Hello implements IHello{
+    static class Hello implements IHello {
 
         @Override
         public void sayHello() {
@@ -19,21 +19,20 @@ public class DProxy {
         }
     }
 
-    static class ProxyClass implements InvocationHandler{
-
+    static class ProxyClass implements InvocationHandler {
 
 
         Object obj;
 
-        Object bind(Object originObject){
+        Object bind(Object originObject) {
             this.obj = originObject;
-            return Proxy.newProxyInstance(originObject.getClass().getClassLoader(),obj.getClass().getInterfaces(),new ProxyClass());
+            return Proxy.newProxyInstance(originObject.getClass().getClassLoader(), obj.getClass().getInterfaces(), new ProxyClass());
         }
 
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
             System.out.println("welcome");
-            return method.invoke(obj,args);
+            return method.invoke(obj, args);
         }
     }
 
